@@ -7,7 +7,7 @@ add the snippet to `.meta.toml`
 [github]
 extra_lines = """
   plonetests:
-    uses: 1letter/workflow-plonematrix/.github/workflows/plonetest-matrix.yml@main
+    uses: collective/workflow-plonematrix/.github/workflows/plonetest-matrix.yml@main
 """
 [tox]
 use_mxdev = true

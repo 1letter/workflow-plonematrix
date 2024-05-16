@@ -16,10 +16,10 @@ on:
         required: false
         default: '["3.11"]'
         type: string
-      CODECOV_TOKEN:
-        required: true
-        default: ""
-        type: string
+    secrets:
+      codecov-token:
+        description: "A codecov access token passed from the caller workflow"
+        required: false
 
 jobs:
   coveralls:
@@ -58,4 +58,4 @@ jobs:
         with:
           fail_ci_if_error: true
           verbose: true
-          token: ${{ inputs.CODECOV_TOKEN }}
+          token: ${{ secrets.codecov-token }}

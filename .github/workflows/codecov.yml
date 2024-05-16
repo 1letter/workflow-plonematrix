@@ -8,6 +8,18 @@ on:
   # allow this workflow to be called
   # by other workflows from other repositories
   workflow_call:
+    inputs:
+      os-packages:
+        required: false
+        type: string
+      py-versions:
+        required: false
+        default: '["3.11"]'
+        type: string
+      CODECOV_TOKEN:
+        required: true
+        default: ""
+        type: string
 
 jobs:
   coveralls:
@@ -46,4 +58,4 @@ jobs:
         with:
           fail_ci_if_error: true
           verbose: true
-          token: ${{ secrets.CODECOV_TOKEN }}
+          token: ${{ inputs.CODECOV_TOKEN }}
